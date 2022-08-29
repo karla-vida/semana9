@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import {ProdutosSelecionadosContext} from '.';
+import {ProdutosSelecionadosContext} from '@contexts';
 
 export const useProdutosSelecionados = () => {
     const context = useContext(ProdutosSelecionadosContext);

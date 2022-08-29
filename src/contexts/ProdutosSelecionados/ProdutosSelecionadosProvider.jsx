@@ -1,23 +1,24 @@
-import { ProdutosSelecionadosContext } from "./ProdutosSelecionadosContext";
-import PropTypes from 'propTypes';
+import { ProdutosSelecionadosContext } from "@contexts";
+import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 export const ProdutosSelecionadosProvider = ({ children }) => {
     const [produtosSelecionados, setProdutosSelecionados] = useState ([]);
     const isSelecionado = (id) => {
-        return ProdutosSelecionados.some((item) => item === id);
+        return produtosSelecionados.some((item) => item.id === id);
       };
     
       const handleSelecionar = (produto) => {
         if (isSelecionado(produto.id)) {
-          setProdutosSelecionados(ProdutosSelecionados.filter((item) => item.id !== produto.id));
+          setProdutosSelecionados(produtosSelecionados.filter((item) => item.id !== produto.id));
           return;
         };
     
-        setProdutosSelecionados([...ProdutosSelecionados, produto]);
+        setProdutosSelecionados([...produtosSelecionados, produto]);
       };
     return (
     <ProdutosSelecionadosContext.Provider 
-    value={{produtosSelecionados, setProdutosSelecionados, handleSelecionar}}
+    value={{produtosSelecionados, isSelecionado, handleSelecionar}}
     > 
     {children}
     </ProdutosSelecionadosContext.Provider>

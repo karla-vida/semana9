@@ -1,3 +1,4 @@
-const { creatContext } = require('react');
 
-export const ProdutosSelecionados = createContext();
+import { createContext } from 'react';
+
+export const ProdutosSelecionadosContext = createContext();

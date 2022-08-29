@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <ProdutoSelecionadoPovider>
+      <ProdutosSelecionadosProvider>
       <Header />
       <main className={styles.main}>
         <FiltroSecao
@@ -56,7 +56,7 @@ function App() {
         ))}
       </main>
       <Footer />
-      </ProdutoSelecionadoPovider>
+      </ProdutosSelecionadosProvider>
     </div>
   );
 }
