@@ -13,6 +13,7 @@ export const ProdutosSelecionados = () => {
         <h1>Produtos Selecionados</h1>
         <h2> {`R$ ${total.toFixed(2).replace('.', `,`)}`}</h2>
         <ListaCards produtos={produtosSelecionados} />
+        <button onClick={limparProdutos}>Remover Produtos</button>
     </>
   );
 };
